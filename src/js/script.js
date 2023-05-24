@@ -59,11 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const monthlyPaymentArounded = Math.round(monthlyPayment);
 
-    if (monthlyPaymentArounded < 0) {
+    if (monthlyPaymentArounded < 0 || lounAmount < 0) {
       return false;
     } else {
       priceSumma.innerHTML = formatNumber(lounAmount);
       resultat.innerHTML = formatNumber(monthlyPaymentArounded);
+      console.log(monthlyPaymentArounded);
     }
   };
 });
